@@ -1,0 +1,353 @@
+body {
+  background: linear-gradient(120deg, #f6f8fa 60%, #e0e7ff 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.classroom-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+}
+
+.classroom-header {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  gap: 18px;
+}
+
+.classroom-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3em 1em;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-left: 8px;
+  background: #e0e7ff;
+  color: #3730a3;
+  letter-spacing: 0.01em;
+}
+.status-in_progress {
+  background: #d1fae5;
+  color: #047857;
+}
+.status-ended {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.teacher-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.lists-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 16px;
+}
+
+.list-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(99,102,241,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+  padding: 1.5rem 1.2rem;
+  min-width: 220px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.list-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-card li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #3730a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 6px;
+}
+
+.teacher-controls button {
+  padding: 0.7rem 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.teacher-controls button:disabled {
+  background: #d1d5db;
+  color: #888;
+  cursor: not-allowed;
+}
+.teacher-controls button:not(:disabled):hover {
+  background: #4f46e5;
+}
+
+.center-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}
+input, select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+input:focus, select:focus {
+  border: 1.5px solid #6366f1;
+  outline: none;
+}
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #4f46e5;
+}
+.manager-link {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.manager-link:hover {
+  color: #4338ca;
+  text-decoration: underline;
+}
+.manager-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+}
+.manager-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.manager-card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}
+.manager-input-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+.manager-input-row input {
+  flex: 1 1 0;
+  min-width: 120px;
+  padding: 0.7rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+.manager-input-row button {
+  flex: 0 0 auto;
+  min-width: 120px;
+  max-width: 180px;
+  width: auto;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.manager-input-row button:hover {
+  background: #4f46e5;
+}
+.log-list {
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.log-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+}
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  font-size: 0.95em;
+  font-weight: 600;
+  margin-left: 4px;
+}
+.badge-join {
+  background: #d1fae5;
+  color: #047857;
+}
+.badge-leave {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.badge-start_class {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+.badge-end_class {
+  background: #fef3c7;
+  color: #b45309;
+}
+@media (max-width: 900px) {
+  .lists-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .classroom-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .list-card {
+    min-width: 0;
+    width: 98vw;
+    max-width: 400px;
+  }
+  .card {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .manager-card {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .manager-card {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .manager-input-row {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .manager-input-row button {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+} 

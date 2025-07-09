@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: LIVE Classroom API
+  version: 1.0.0
+  description: API documentation for the LIVE Classroom backend
+servers:
+  - url: http://localhost:5000
+paths:
+  /api/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: Server is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+  /api/classroom/{roomId}/history:
+    get:
+      summary: Get classroom event history
+      parameters:
+        - in: path
+          name: roomId
+          schema:
+            type: string
+          required: true
+          description: The unique classroom ID
+      responses:
+        '200':
+          description: Event log for the classroom
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roomId:
+                    type: string
+                  logs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        roomId:
+                          type: string
+                        userId:
+                          type: string
+                        name:
+                          type: string
+                        role:
+                          type: string
+                          enum: [student, teacher]
+                        eventType:
+                          type: string
+                          enum: [join, leave, start_class, end_class]
+                        timestamp:
+                          type: string
+                          format: date-time 
