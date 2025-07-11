@@ -274,25 +274,58 @@ button:hover {
 .manager-input-row button:hover {
   background: #4f46e5;
 }
+.log-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+  text-align: center;
+  color: #222;
+}
 .log-list {
   margin-top: 1.5rem;
   padding: 0;
   list-style: none;
+  width: 100%;
 }
 .log-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 0.7rem;
-  font-size: 1.05rem;
+  gap: 12px;
+  margin-bottom: 1.1rem;
+  font-size: 1.08rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 1px 4px rgba(99,102,241,0.04);
+}
+.log-timestamp {
+  color: #888;
+  min-width: 160px;
+  font-size: 0.98rem;
+}
+.log-role {
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-right: 2px;
+}
+.role-teacher {
+  color: #3730a3;
+}
+.role-student {
+  color: #047857;
+}
+.log-name {
+  font-weight: 700;
+  margin-right: 4px;
 }
 .badge {
   display: inline-block;
-  padding: 0.2em 0.7em;
+  padding: 0.2em 0.9em;
   border-radius: 999px;
-  font-size: 0.95em;
+  font-size: 0.98em;
   font-weight: 600;
   margin-left: 4px;
+  text-transform: capitalize;
 }
 .badge-join {
   background: #d1fae5;
@@ -309,6 +342,48 @@ button:hover {
 .badge-end_class {
   background: #fef3c7;
   color: #b45309;
+}
+.student-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 32px 0 24px 0;
+  padding: 12px 0;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.student-message.waiting {
+  color: #3730a3;
+  background: #e0e7ff;
+}
+.student-message.in-progress {
+  color: #047857;
+  background: #d1fae5;
+}
+.student-message.ended {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.student-message-top {
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+.back-btn {
+  background: #f3f4f6;
+  color: #3730a3;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 18px;
+  margin-right: auto;
+  transition: background 0.2s, color 0.2s;
+}
+.back-btn:hover {
+  background: #e0e7ff;
+  color: #111;
 }
 @media (max-width: 900px) {
   .lists-row {
@@ -349,5 +424,16 @@ button:hover {
     width: 100%;
     min-width: 0;
     max-width: 100%;
+  }
+  .log-timestamp {
+    min-width: 90px;
+    font-size: 0.92rem;
+  }
+  .log-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 1rem;
+    padding: 0.7rem 0.5rem;
   }
 } 

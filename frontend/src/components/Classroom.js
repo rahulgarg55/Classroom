@@ -25,12 +25,14 @@ function Classroom({
   status,
   teachers,
   students,
+  allStudents,
   role,
   socket,
   userId,
 }) {
   return (
     <div className="classroom-container">
+      {role === "student" && <StudentView status={status} top />}
       <div className="classroom-header">
         <div className="classroom-title">
           Classroom
@@ -74,8 +76,21 @@ function Classroom({
             ))}
           </ul>
         </div>
+        <div className="list-card">
+          <div className="list-title">All Students Ever Joined</div>
+          <ul>
+            {(!allStudents || allStudents.length === 0) && (
+              <li style={{ color: "#aaa" }}>No students</li>
+            )}
+            {allStudents &&
+              allStudents.map((s) => (
+                <li key={s.userId}>
+                  <span className="avatar">{getInitials(s.name)}</span> {s.name}
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
-      {role === "student" && <StudentView />}
     </div>
   );
 }

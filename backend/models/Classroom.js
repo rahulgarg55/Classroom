@@ -17,6 +17,7 @@ const classroomSchema = new mongoose.Schema({
   },
   teachers: [participantSchema],
   students: [participantSchema],
+  allStudents: [participantSchema],
 });
 
 export default mongoose.model("Classroom", classroomSchema);
